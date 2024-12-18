@@ -1,21 +1,10 @@
-package org.example.currency_exchange;
-
-import io.github.cdimascio.dotenv.Dotenv;
+package org.example.currency_exchanger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-
-    private final Dotenv dotenv;
-
-    public DatabaseConnection() {
-        // Loading .env
-        dotenv = Dotenv.configure()
-                .directory("/home/aliev008/IdeaProjects/currency_exchange/.env")
-                .load();
-    }
 
     public Connection connect() throws SQLException {
         try {
@@ -24,7 +13,9 @@ public class DatabaseConnection {
             throw new SQLException("SQLite JDBC Driver not found.", e);
         }
 
-        String url = dotenv.get("DATABASE_URL");
+        String url = "jdbc:sqlite:demo.db";
         return DriverManager.getConnection(url);
     }
+
+
 }
