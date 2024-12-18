@@ -6,6 +6,7 @@ REST API для описания валют и обменных курсов. П
 
 ## REST API
 
+http://89.111.141.226:8080/currency-exchanger/ 
 
 #### GET `/currencies`
 
